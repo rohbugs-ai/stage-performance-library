@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/icon-512x512.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Offline song library for stage performances" />
+  <title>Stage Performance Library</title>
+  <script type="module" crossorigin src="/assets/index-BIyYooG8.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CtRKDYEH.css">
+<link rel="manifest" href="/manifest.webmanifest"></head>
+<body>
+  <header>
+    <div class="controls-container">
+      <input type="text" id="searchInput" placeholder="Search song (English)..." aria-label="Search songs">
+      <select id="categorySelect" aria-label="Filter by category">
+        <option value="All">All Categories</option>
+      </select>
+      <button id="syncBtn" class="btn-sync" aria-label="Sync Data">Sync Data</button>
+      <button id="installBtn" class="btn-primary hidden" aria-label="Install App">Install App</button>
+    </div>
+    <div id="iosInstallPrompt" class="hidden" style="margin-top: 10px; font-size: 0.9rem; color: var(--highlight); text-align: center;">
+      To install this app on iOS, tap the <strong>Share</strong> button and select <strong>Add to Home Screen</strong>.
+    </div>
+  </header>
+
+  <main>
+    <div id="loading" class="hidden">Syncing data... Please wait.</div>
+    <div id="statusMessage">Offline Mode Ready. Sync data to get started.</div>
+    <div id="syncPrompt" class="hidden">
+      <h3>Set up Sync</h3>
+      <p>Enter your Google Apps Script Web App URL to sync data:</p>
+      <input type="text" id="apiUrlInput" placeholder="https://script.google.com/macros/s/.../exec">
+      <button id="saveApiBtn" class="btn-primary">Save & Sync</button>
+    </div>
+    
+    <div id="songList" class="song-grid hidden"></div>
+  </main>
+
+</body>
+</html>
