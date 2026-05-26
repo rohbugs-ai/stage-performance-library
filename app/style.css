@@ -67,10 +67,25 @@ input:focus, select:focus {
   background-color: #007aff;
   color: #fff;
   border: none;
-  margin-top: 1rem;
   cursor: pointer;
 }
 .btn-primary:active { background-color: #005bb5; }
+
+.btn-small {
+  width: auto;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.edit-link {
+  font-size: 0.9rem;
+  color: var(--highlight);
+  text-align: center;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+}
 
 main { padding: 1rem; }
 
