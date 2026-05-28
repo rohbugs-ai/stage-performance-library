@@ -69,12 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function initApp() {
   const storedData = localStorage.getItem('songsData');
   const apiUrl = localStorage.getItem('GAS_API_URL');
-  const defaultUrl = "https://script.google.com/macros/s/AKfycbxyCyLR3CLHSx6q-Y3aXXowNnmo3mPcw9ACy5t9hCZVg9xIcTWiAmhpZYl7rQbDbJI46Q/exec";
+  const defaultUrl = "https://script.google.com/macros/s/AKfycbybHDvzueLFugJu4pdl620zNsvjy8PBOBfSpqmN6XlUUbbjpXzMdir_7I_LC9phkuuqGQ/exec";
   
   if (apiUrl) {
     document.getElementById('apiUrlInput').value = apiUrl;
   } else {
     document.getElementById('apiUrlInput').value = defaultUrl;
+    localStorage.setItem('GAS_API_URL', defaultUrl);
   }
   
   if (storedData) {
@@ -85,8 +86,8 @@ function initApp() {
       document.getElementById('statusMessage').innerText = "Stored data corrupted. Please sync again.";
     }
   } else {
-    document.getElementById('statusMessage').classList.remove('hidden');
-    document.getElementById('syncPrompt').classList.remove('hidden');
+    // Automatically sync on first use
+    syncData(apiUrl || defaultUrl);
   }
 }
 
