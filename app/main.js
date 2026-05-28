@@ -69,9 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 function initApp() {
   const storedData = localStorage.getItem('songsData');
   const apiUrl = localStorage.getItem('GAS_API_URL');
+  const defaultUrl = "https://script.google.com/macros/s/AKfycbxyCyLR3CLHSx6q-Y3aXXowNnmo3mPcw9ACy5t9hCZVg9xIcTWiAmhpZYl7rQbDbJI46Q/exec";
   
   if (apiUrl) {
     document.getElementById('apiUrlInput').value = apiUrl;
+  } else {
+    document.getElementById('apiUrlInput').value = defaultUrl;
   }
   
   if (storedData) {
